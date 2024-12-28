@@ -15,6 +15,9 @@ This project is a simple registration form that collects user details (username,
 - MongoDB for data storage
 
 ## Screenshots
+Printing Data to the browser console
 ![Screenshot 2024-12-28 134546](https://github.com/user-attachments/assets/35877a40-6a80-4f6f-be87-cfe473674562)
+Data saved to MongoDB
 ![Screenshot 2024-12-28 134745](https://github.com/user-attachments/assets/440e3c39-851b-4760-8efb-dda9e6fdd64f)
+Printing Data to the terminal
 ![Screenshot 2024-12-28 134647](https://github.com/user-attachments/assets/8c13d7df-edf0-4c92-b2e9-506f4452382f)
