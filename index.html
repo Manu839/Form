@@ -90,6 +90,8 @@
 
         <button type="submit">Submit</button>
     </form>
+
+
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function (event) {
             event.preventDefault();
@@ -98,27 +100,29 @@
             const gender = document.getElementById('gender').value;
             const dob = document.getElementById('dob').value;
 
-            console.log(`Form submitted with the following details:`);
+            console.log(`Form submitted`);
             console.log(`Username: ${username}`);
             console.log(`Email: ${email}`);
             console.log(`Gender: ${gender}`);
             console.log(`Date of Birth: ${dob}`);
+
+            const data = { username, email, gender, dob };
+
+            const backendUrl = 'http://localhost:5000/submit';
+
+            fetch(backendUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => console.log('Data saved:', data))
+                .catch(error => console.error('Error saving data:', error));
         });
-
-        backendUrl = process.env.BackendUrl
-
-        fetch(backendUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, email, gender, dob })
-        })
-            .then(response => response.json())
-            .then(data => console.log('Data saved', data))
-            .catch(error => console.error('Error saving data:', error));
-
     </script>
+
 </body>
 
 </html>
