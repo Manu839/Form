@@ -104,8 +104,21 @@
             console.log(`Gender: ${gender}`);
             console.log(`Date of Birth: ${dob}`);
         });
-    </script>
 
+        backendUrl = process.env.BackendUrl
+
+        fetch(backendUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, email, gender, dob })
+        })
+            .then(response => response.json())
+            .then(data => console.log('Data saved', data))
+            .catch(error => console.error('Error saving data:', error));
+
+    </script>
 </body>
 
 </html>
